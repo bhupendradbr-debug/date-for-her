@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>A Special Question 💖</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  text-align: center;
+  overflow-x: hidden;
+}
+
+h1 {
+  margin-top: 30px;
+}
+
+.section {
+  margin: 50px 0;
+}
+
+img {
+  width: 80%;
+  max-width: 350px;
+  border-radius: 15px;
+  margin: 20px 0;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+img.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 18px;
+  margin: 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.yes {
+  background-color: #ff4b5c;
+  color: white;
+}
+
+.no {
+  background-color: grey;
+  color: white;
+  position: absolute;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Hey Beautiful ❤️</h1>
+<p>Scroll down... I want to show you something special ✨</p>
+
+<div class="section">
+  <img src="her1.jpg">
+  <img src="her2.jpg">
+  <img src="her3.jpg">
+  <img src="her4.jpg">
+  <img src="her5.jpg">
+  <img src="her6.jpg">
+  <img src="her7.jpg">
+  <img src="her8.jpg">
+  <img src="her9.jpg">
+  <img src="her10.jpg">
+  <img src="her11.jpg">
+  <img src="her12.jpg">
+  <img src="her13.jpg">
+  <img src="her14.jpg">
+  <img src="her15.jpg">
+  <img src="her16.jpg">
+  
+</div>
+
+<h2>Will you go on a date with me this weekend? 😌💖</h2>
+
+<div style="position:relative; height:150px;">
+  <button class="yes" onclick="alert('Yayyyy ❤️ Best decision ever!')">Yes ❤️</button>
+  <button class="no" id="noBtn">No 😜</button>
+</div>
+
+<script>
+// Scroll animation
+const images = document.querySelectorAll("img");
+
+window.addEventListener("scroll", () => {
+  images.forEach(img => {
+    const position = img.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.2;
+
+    if(position < screenPosition){
+      img.classList.add("show");
+    }
+  });
+});
+
+// Moving No button
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover", function() {
+  const i = Math.floor(Math.random() * 300);
+  const j = Math.floor(Math.random() * 200);
+  noBtn.style.left = i + "px";
+  noBtn.style.top = j + "px";
+});
+</script>
+
+</body>
+</html>
